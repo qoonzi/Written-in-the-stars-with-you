@@ -45,6 +45,19 @@ if (btnYes) {
     });
 }
 
+window.addEventListener("load", () => {
+    const music = document.getElementById("bgMusic");
+
+    if (
+        music &&
+        localStorage.getItem("musicAllowed") === "true"
+    ) {
+        music.play().catch(err => {
+            console.log(err);
+        });
+    }
+});
+
 /* ==========================
 FLOATING HEARTS
 ========================== */
