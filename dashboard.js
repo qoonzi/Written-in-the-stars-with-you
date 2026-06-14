@@ -31,15 +31,19 @@ loading.style.display="none";
 /* ==========================
 AUTO PLAY MUSIC
 ========================== */
-
 const btnYes = document.getElementById("btnYes");
 
-btnYes.addEventListener("click", () => {
-    localStorage.setItem("musicAllowed", "true");
+if (btnYes) {
+    btnYes.addEventListener("click", () => {
+        localStorage.setItem("musicAllowed", "true");
 
-    const music = document.getElementById("bgMusic");
-    music.play().catch(() => {});
-});
+        const music = document.getElementById("bgMusic");
+
+        if (music) {
+            music.play().catch(() => {});
+        }
+    });
+}
 
 /* ==========================
 FLOATING HEARTS
